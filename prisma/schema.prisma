@@ -1,0 +1,139 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Personnel : ADMIN (tout), STOCK (produits, catégories, stock), VENTE (ventes).
+enum Role {
+  ADMIN
+  VENTE
+  STOCK
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum MovementType {
+  IN     // entrée de stock (réception, réapprovisionnement)
+  OUT    // sortie : vente
+  ADJUST // correction d'inventaire (casse, perte, erreur de comptage)
+}
+
+enum OrderSource {
+  WEB     // commande passée par le client sur le site
+  COUNTER // vente saisie par le personnel
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(VENTE)
+  /// Détermine l'avatar par défaut (public/personnels) quand photoUrl est vide.
+  gender       Gender   @default(MALE)
+  photoUrl     String?
+  createdAt    DateTime @default(now())
+
+  movements StockMovement[]
+  orders    Order[]
+
+  categoriesCreated Category[] @relation("CategoryCreatedBy")
+  categoriesUpdated Category[] @relation("CategoryUpdatedBy")
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  /// Personnel qui a créé / modifié en dernier la catégorie (null pour les anciennes lignes ou si le compte est supprimé).
+  createdById String?
+  createdBy   User?   @relation("CategoryCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedById String?
+  updatedBy   User?   @relation("CategoryUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+
+  products Product[]
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  price       Float
+  imageUrl    String
+  isFeatured  Boolean  @default(false)
+  /// Quantité disponible. 10 par défaut. Ne jamais la modifier directement : passer par un mouvement de stock.
+  stock       Int      @default(10)
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime @default(now())
+
+  movements  StockMovement[]
+  orderItems OrderItem[]
+
+  @@index([categoryId])
+  @@index([isFeatured])
+}
+
+/// Journal de tous les mouvements de stock (qui, quand, combien, pourquoi).
+model StockMovement {
+  id         String       @id @default(cuid())
+  type       MovementType
+  /// Signée : positive pour une entrée, négative pour une vente ou une correction à la baisse.
+  quantity   Int
+  stockAfter Int
+  note       String?
+  createdAt  DateTime     @default(now())
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId    String?
+  user      User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  orderId   String?
+  order     Order?  @relation(fields: [orderId], references: [id], onDelete: SetNull)
+
+  @@index([productId])
+  @@index([createdAt])
+}
+
+model Order {
+  id            String      @id @default(cuid())
+  number        Int         @unique @default(autoincrement())
+  customerName  String
+  customerEmail String?
+  customerPhone String?
+  source        OrderSource @default(WEB)
+  total         Float
+  createdAt     DateTime    @default(now())
+
+  createdById String?
+  createdBy   User?   @relation(fields: [createdById], references: [id], onDelete: SetNull)
+
+  items     OrderItem[]
+  movements StockMovement[]
+
+  @@index([createdAt])
+}
+
+/// Copie du titre et du prix au moment de la vente : l'historique reste correct si le produit change ou est supprimé.
+model OrderItem {
+  id        String  @id @default(cuid())
+  title     String
+  unitPrice Float
+  quantity  Int
+
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+}

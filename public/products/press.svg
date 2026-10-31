@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Cafetière à piston 800 ml">
+  <rect width="800" height="800" fill="#E4E2DA" />
+  <ellipse cx="400" cy="670" rx="170" ry="22" fill="#14232A" opacity=".12" />
+  <rect x="260" y="260" width="280" height="390" rx="20" fill="#FFFFFF" opacity=".6" />
+  <rect x="260" y="420" width="280" height="230" rx="10" fill="#4A2810" opacity=".85" />
+  <rect x="240" y="240" width="320" height="30" fill="#2B2D42" />
+  <rect x="240" y="630" width="320" height="30" fill="#2B2D42" />
+  <line x1="400" y1="120" x2="400" y2="250" stroke="#2B2D42" stroke-width="14" />
+  <circle cx="400" cy="100" r="28" fill="#2B2D42" />
+  <path d="M540 320 C640 320 640 560 540 560" stroke="#2B2D42" stroke-width="24" fill="none" stroke-linecap="round" />
+</svg>

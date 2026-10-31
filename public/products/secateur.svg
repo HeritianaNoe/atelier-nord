@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Lames -->
+  <path d="M 30 20 C 45 10, 60 25, 50 40 L 40 35 Z" fill="#b0bec5" stroke="#37474f" stroke-width="2" />
+  <path d="M 50 15 C 40 25, 45 40, 35 45 L 40 35 Z" fill="#cfd8dc" stroke="#37474f" stroke-width="2" />
+  <!-- Pivot -->
+  <circle cx="43" cy="36" r="3" fill="#37474f" />
+  <!-- Poignées -->
+  <path d="M 43 39 C 45 55, 60 70, 75 80 C 78 82, 73 85, 68 82 C 55 70, 40 55, 39 42 Z" fill="#e53935" />
+  <path d="M 38 42 C 35 58, 25 75, 15 85 C 12 87, 10 82, 13 78 C 23 65, 33 50, 36 38 Z" fill="#e53935" />
+</svg>

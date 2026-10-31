@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Drap de lit en chanvre">
+  <rect width="800" height="800" fill="#E4E2DA" />
+  <ellipse cx="400" cy="660" rx="280" ry="28" fill="#14232A" opacity=".12" />
+  <rect x="150" y="240" width="500" height="390" rx="20" fill="#D8C3A5" />
+  <path d="M150 240 Q400 320 650 240 L650 400 Q400 480 150 400 Z" fill="#E9D8A6" />
+</svg>

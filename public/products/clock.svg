@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Horloge murale minimale">
+  <rect width="800" height="800" fill="#E4E2DA" />
+  <ellipse cx="400" cy="680" rx="220" ry="24" fill="#14232A" opacity=".12" />
+  <circle cx="400" cy="400" r="220" fill="#9E9E9E" />
+  <circle cx="400" cy="400" r="210" fill="#BDBDBD" />
+  <circle cx="400" cy="400" r="12" fill="#D4AF37" />
+  <line x1="400" y1="400" x2="400" y2="240" stroke="#D4AF37" stroke-width="12" stroke-linecap="round" />
+  <line x1="400" y1="400" x2="510" y2="400" stroke="#D4AF37" stroke-width="12" stroke-linecap="round" />
+</svg>

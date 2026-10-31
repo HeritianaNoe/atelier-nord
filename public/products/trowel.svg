@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Transplanteur gradué">
+  <rect width="800" height="800" fill="#E4E2DA" />
+  <ellipse cx="400" cy="670" rx="200" ry="20" fill="#14232A" opacity=".12" />
+  <rect x="375" y="440" width="50" height="220" rx="15" fill="#B5838D" />
+  <path d="M400 140 C480 260 470 440 400 440 C330 440 320 260 400 140 Z" fill="#8D99AE" />
+  <line x1="370" y1="280" x2="430" y2="280" stroke="#2B2D42" stroke-width="4" />
+  <line x1="375" y1="330" x2="425" y2="330" stroke="#2B2D42" stroke-width="4" />
+  <line x1="380" y1="380" x2="420" y2="380" stroke="#2B2D42" stroke-width="4" />
+</svg>

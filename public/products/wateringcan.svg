@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Corps de l'arrosoir -->
+  <path d="M 30 45 L 35 80 L 65 80 L 70 45 Z" fill="#90a4ae" stroke="#37474f" stroke-width="2" />
+  <!-- Anse arrière -->
+  <path d="M 32 50 C 15 50, 15 75, 34 78" fill="none" stroke="#37474f" stroke-width="3" stroke-linecap="round" />
+  <!-- Bec -->
+  <path d="M 65 60 L 85 40" fill="none" stroke="#90a4ae" stroke-width="6" stroke-linecap="round" />
+  <path d="M 65 60 L 85 40" fill="none" stroke="#37474f" stroke-width="1.5" />
+  <!-- Pomme d'arrosage -->
+  <path d="M 82 35 L 90 45 L 85 48 Z" fill="#78909c" stroke="#37474f" stroke-width="1.5" />
+  <!-- Poignée supérieure -->
+  <path d="M 40 45 C 40 30, 60 30, 60 45" fill="none" stroke="#37474f" stroke-width="3" />
+</svg>

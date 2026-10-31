@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Cache-pot en terre cuite">
+  <rect width="800" height="800" fill="#E4E2DA" />
+  <ellipse cx="400" cy="670" rx="210" ry="25" fill="#14232A" opacity=".12" />
+  <path d="M220 280 L250 640 H550 L580 280 Z" fill="#C86D51" />
+  <rect x="200" y="220" width="400" height="70" rx="15" fill="#D97A5D" />
+  <line x1="250" y1="360" x2="550" y2="360" stroke="#B0583C" stroke-width="6" />
+  <line x1="260" y1="440" x2="540" y2="440" stroke="#B0583C" stroke-width="6" />
+  <line x1="270" y1="520" x2="530" y2="520" stroke="#B0583C" stroke-width="6" />
+</svg>

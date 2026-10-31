@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Boîtes hermétiques inox">
+  <rect width="800" height="800" fill="#E4E2DA" />
+  <ellipse cx="400" cy="670" rx="270" ry="28" fill="#14232A" opacity=".12" />
+  <rect x="160" y="420" width="480" height="230" rx="25" fill="#8D99AE" />
+  <rect x="130" y="380" width="540" height="50" rx="15" fill="#3E5C76" />
+  <rect x="240" y="230" width="320" height="130" rx="20" fill="#A2ABB8" />
+  <rect x="220" y="200" width="360" height="40" rx="12" fill="#3E5C76" />
+</svg>
